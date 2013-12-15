@@ -1,0 +1,6 @@
+SublimeLinter-ruby
+-------------------------------
+
+This linter plugin for SublimeLinter provides an interface to ruby.
+
+For more information, please see https://github.com/Aparajita/SublimeLinter-ruby.
