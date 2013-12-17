@@ -4,11 +4,12 @@ SublimeLinter-ruby
 This linter plugin for [SublimeLinter](https://github.com/SublimeLinter/SublimeLinter3) provides an interface to linting via [ruby -wc](https://www.ruby-lang.org). It will be used with files that have the “Ruby” syntax.
 
 ## Installation
+SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 3 is not installed, please follow the instructions [here](https://github.com/SublimeLinter/SublimeLinter.github.io/wiki/Installation).
 
 ### Linter installation
 Before installing this plugin, you must ensure that `ruby` is installed on your system. On Mac OS X and Linux, `ruby` comes preinstalled. On Windows, follow the instructions on the [Ruby site](https://www.ruby-lang.org/en/downloads/).
 
-Once Ruby is installed, you can proceed to install the SublimeLinter-ruby plugin.
+Once Ruby is installed, you can proceed to install the SublimeLinter-ruby plugin if it not yet installed.
 
 ### Plugin installation
 Please use [Package Control](https://sublime.wbond.net/installation) to install the linter plugin. This will ensure that the plugin will be updated when new versions are available. If you want to install from source so you can modify the source code, you probably know what you are doing so we won’t cover that here.
