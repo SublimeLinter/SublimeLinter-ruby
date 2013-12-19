@@ -24,5 +24,5 @@ class Ruby(Linter):
         r'(?:^[^\r\n]+\r?\n^(?P<col>.*?)\^)?'
     )
     multiline = True
-    error_stream = util.STREAM_STDERR
+    error_stream = util.STREAM_BOTH
     comment_re = r'\s*#'
