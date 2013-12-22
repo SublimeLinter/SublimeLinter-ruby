@@ -9,6 +9,8 @@ SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 
 ### Linter installation
 Before installing this plugin, you must ensure that `ruby` is installed on your system. On Mac OS X and Linux, `ruby` comes preinstalled. On Windows, follow the instructions on the [Ruby site](https://www.ruby-lang.org/en/downloads/).
 
+If you are using `rvm` or `rbenv`, ensure that they are loaded in your shell’s “profile” file. See [here](https://github.com/SublimeLinter/SublimeLinter.github.io/wiki/Usage#profile-vs-rc) for more information.
+
 Once Ruby is installed, you can proceed to install the SublimeLinter-ruby plugin if it not yet installed.
 
 ### Plugin installation
