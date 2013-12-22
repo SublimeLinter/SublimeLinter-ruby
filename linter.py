@@ -10,7 +10,7 @@
 
 """This module exports the Ruby plugin class."""
 
-from SublimeLinter.lint import Linter, util
+from SublimeLinter.lint import Linter
 
 
 class Ruby(Linter):
@@ -20,9 +20,8 @@ class Ruby(Linter):
     syntax = 'ruby'
     cmd = 'ruby -wc'
     regex = (
-        r'^.+?:(?P<line>\d+):.+?, (?P<message>[^\r\n]+)\r?\n'
+        r'^.+?:(?P<line>\d+): (?:(?P<error>.*?error)|(?P<warning>warning))[,:] (?P<message>[^\r\n]+)\r?\n'
         r'(?:^[^\r\n]+\r?\n^(?P<col>.*?)\^)?'
     )
     multiline = True
-    error_stream = util.STREAM_BOTH
     comment_re = r'\s*#'
