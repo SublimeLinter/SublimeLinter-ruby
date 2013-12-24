@@ -10,10 +10,10 @@
 
 """This module exports the Ruby plugin class."""
 
-from SublimeLinter.lint import Linter
+from SublimeLinter.lint import RubyLinter
 
 
-class Ruby(Linter):
+class Ruby(RubyLinter):
 
     """Provides an interface to ruby -wc."""
 
