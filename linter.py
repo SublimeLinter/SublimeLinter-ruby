@@ -17,7 +17,7 @@ class Ruby(RubyLinter):
 
     """Provides an interface to ruby -wc."""
 
-    syntax = 'ruby'
+    syntax = ('ruby', 'ruby on rails')
     cmd = 'ruby -wc'
     regex = (
         r'^.+?:(?P<line>\d+): (?:(?P<error>.*?error)|(?P<warning>warning))[,:] (?P<message>[^\r\n]+)\r?\n'
