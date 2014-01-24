@@ -1,6 +1,8 @@
 SublimeLinter-ruby
 =========================
 
+[![Build Status](https://khancdn.eu/badges.php?service=https%3A%2F%2Ftravis-ci.org%2FSublimeLinter%2FSublimeLinter-ruby.png%3Fbranch%3Dmaster)](https://travis-ci.org/SublimeLinter/SublimeLinter-ruby)
+
 This linter plugin for [SublimeLinter](http://sublimelinter.readthedocs.org) provides an interface to linting via [ruby -wc](https://www.ruby-lang.org). It will be used with files that have the “Ruby” syntax.
 
 ## Installation
