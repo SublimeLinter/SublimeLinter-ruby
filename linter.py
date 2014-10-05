@@ -25,3 +25,6 @@ class Ruby(RubyLinter):
     )
     multiline = True
     comment_re = r'\s*#'
+    version_args = '--version'
+    version_re = r'^ruby (?P<version>\d+\.\d+\.\d+)'
+    version_requirement = '>= 1.8'
