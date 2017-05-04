@@ -12,6 +12,7 @@
 """This module exports the Ruby plugin class."""
 
 from SublimeLinter.lint import RubyLinter
+import re
 
 
 class Ruby(RubyLinter):
@@ -39,4 +40,35 @@ class Ruby(RubyLinter):
             if match.group('file') != '-':
                 match = None
 
-        return super().split_match(match)
+        match, line, col, error, warning, message, _ = super().split_match(match)
+        near = self.search_token(message)
+
+        return match, line, col, error, warning, message, near
+
+    def search_token(self, message):
+        """Search text token to be highlighted."""
+
+        # First search for variable name enclosed in quotes
+        m = re.search("(?<=`).*(?=')", message)
+
+        # Then search for variable name following a dash
+        if m is None:
+            m = re.search('(?<= - )\S+', message)
+
+        # Then search for mismatched indentation
+        if m is None:
+            m = re.search("(?<=mismatched indentations at ')end", message)
+
+        # Then search for equal operator in conditional
+        if m is None:
+            m = re.search('(?<=found )=(?= in conditional)', message)
+
+        # Then search for use of operator in void context
+        if m is None:
+            m = re.search('\S+(?= in void context)', message)
+
+        # Then search for END in method
+        if m is None:
+            m = re.search('END(?= in method)', message)
+
+        return m.group(0) if m else None
