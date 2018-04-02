@@ -12,8 +12,8 @@ Please use [Package Control](https://packagecontrol.io) to install the linter pl
 
 Before installing this plugin, you must ensure that `ruby` is installed on your system. On Mac OS X and Linux, `ruby` comes preinstalled. On Windows, follow the instructions on the [Ruby site](https://www.ruby-lang.org/en/downloads/).
 
-If you are using `rvm` or `rbenv`, ensure that they are loaded in your shell’s “profile” file. See [here](http://sublimelinter.readthedocs.org/en/latest/troubleshooting.html#shell-startup-files) for more information.
+If you are using `rvm` or `rbenv`, ensure that they are loaded in your shell’s “profile” file. See [here](http://sublimelinter.com/en/latest/troubleshooting.html#shell-startup-files) for more information.
 
 ## Settings
-- SublimeLinter settings: http://sublimelinter.readthedocs.org/en/latest/settings.html
-- Linter settings: http://sublimelinter.readthedocs.org/en/latest/linter_settings.html
+- SublimeLinter settings: http://sublimelinter.com/en/latest/settings.html
+- Linter settings: http://sublimelinter.com/en/latest/linter_settings.html
