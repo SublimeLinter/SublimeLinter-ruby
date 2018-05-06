@@ -17,7 +17,10 @@ from SublimeLinter.lint import RubyLinter
 class Ruby(RubyLinter):
     """Provides an interface to ruby -wc."""
 
-    syntax = ('ruby', 'ruby on rails', 'rspec')
+    defaults = {
+        'selector': 'source.ruby, source.rspec, source.ruby on rails'
+    }
+
     cmd = 'ruby -wc'
     regex = (
         r'^(?P<file>.+?):(?P<line>\d+): (?:(?P<error>.*?error)|(?P<warning>warning))[,:] (?P<message>[^\r\n]+)\r?\n'
