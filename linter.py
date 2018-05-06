@@ -18,7 +18,7 @@ class Ruby(RubyLinter):
     """Provides an interface to ruby -wc."""
 
     defaults = {
-        'selector': 'source.ruby, source.rspec, source.ruby on rails'
+        'selector': 'source.ruby'
     }
 
     cmd = 'ruby -wc'
