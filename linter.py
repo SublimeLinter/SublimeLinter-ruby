@@ -18,7 +18,10 @@ import re
 class Ruby(RubyLinter):
     """Provides an interface to ruby -wc."""
 
-    syntax = ('ruby', 'ruby on rails', 'rspec')
+    defaults = {
+        'selector': 'source.ruby'
+    }
+
     cmd = 'ruby -wc'
     regex = (
         r'^(?P<file>.+?):(?P<line>\d+): (?:(?P<error>.*?error)|(?P<warning>warning))[,:] (?P<message>[^\r\n]+)\r?\n'
