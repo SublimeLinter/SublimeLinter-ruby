@@ -29,6 +29,7 @@ class Ruby(RubyLinter):
     )
     multiline = True
     comment_re = r'\s*#'
+    on_stderr = None
 
     def split_match(self, match):
         """
