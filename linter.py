@@ -12,7 +12,7 @@
 """This module exports the Ruby plugin class."""
 
 from SublimeLinter.lint import RubyLinter
-import re
+# import re
 
 
 class Ruby(RubyLinter):
@@ -29,49 +29,53 @@ class Ruby(RubyLinter):
     )
     multiline = True
     comment_re = r'\s*#'
+    on_stderr = None
 
-    def split_match(self, match):
-        """
-        Return the components of the match.
+    # def split_match(self, match):
+    #     """
+    #     Return the components of the match.
 
-        We override this because unrelated library files can throw errors,
-        and we only want errors from the linted file.
+    #     We override this because unrelated library files can throw errors,
+    #     and we only want errors from the linted file.
 
-        """
+    #     """
 
-        if match:
-            if match.group('file') != '-':
-                match = None
+    #     if match:
+    #         if match.group('file') != '-':
+    #             match = None
 
-        match, line, col, error, warning, message, _ = super().split_match(match)
-        near = self.search_token(message)
+    #     match, line, col, error, warning, message, _ = super().split_match(match)
+    #     near = self.search_token(message)
 
-        return match, line, col, error, warning, message, near
+    #     return match, line, col, error, warning, message, near
 
-    def search_token(self, message):
-        """Search text token to be highlighted."""
+    # def search_token(self, message):
+    #     """Search text token to be highlighted."""
 
-        # First search for variable name enclosed in quotes
-        m = re.search("(?<=`).*(?=')", message)
+    #     # First search for variable name enclosed in quotes
+    #     m = re.search("(?<=`).*(?=')", message)
 
-        # Then search for variable name following a dash
-        if m is None:
-            m = re.search('(?<= - )\S+', message)
+    #     # Then search for variable name following a dash
+    #     if m is None:
+    #         m = re.search('(?<= - )\S+', message)
 
-        # Then search for mismatched indentation
-        if m is None:
-            m = re.search("(?<=mismatched indentations at ')end", message)
+    #     # Then search for mismatched indentation
+    #     if m is None:
+    #         m = re.search("(?<=mismatched indentations at ')end", message)
 
-        # Then search for equal operator in conditional
-        if m is None:
-            m = re.search('(?<=found )=(?= in conditional)', message)
+    #     # Then search for equal operator in conditional
+    #     if m is None:
+    #         m = re.search('(?<=found )=(?= in conditional)', message)
 
-        # Then search for use of operator in void context
-        if m is None:
-            m = re.search('\S+(?= in void context)', message)
+    #     # Then search for use of operator in void context
+    #     if m is None:
+    #         m = re.search('\S+(?= in void context)', message)
 
-        # Then search for END in method
-        if m is None:
-            m = re.search('END(?= in method)', message)
+    #     # Then search for END in method
+    #     if m is None:
+    #         m = re.search('END(?= in method)', message)
 
-        return m.group(0) if m else None
+    #     return m.group(0) if m else None
+
+    def reposition_match(self, line, col, match, vv):
+        return super().reposition_match(line, col, match, vv)
