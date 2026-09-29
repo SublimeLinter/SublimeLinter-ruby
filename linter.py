@@ -23,8 +23,7 @@ class Ruby(RubyLinter):
     }
 
     cmd = 'ruby -wc'
-    regex = r"""
-        (?xm)
+    regex = r"""(?xm)
         ^(?:(?P<exe>.*:\s)?)?                # optional "C:/ruby...:" prefix
         (?P<filename>.+?):(?P<line>\d+):     # file and line
         (?:\s?(?:(?P<error>.*?error)s?|(?P<warning>warning))) # "syntax error" or warning
